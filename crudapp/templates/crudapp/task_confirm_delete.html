@@ -1,0 +1,20 @@
+{% extends 'crudapp/base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card shadow-sm rounded-4">
+        <div class="card-body p-4 text-center">
+            <h2 class="mb-4 text-danger">Delete Task</h2>
+
+            <p class="mb-4">Are you sure you want to delete <strong>"{{ task.title }}"</strong>?</p>
+
+            <form method="post" class="d-inline">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger px-4 py-2 rounded-3">Yes, delete</button>
+            </form>
+
+            <a href="{% url 'task_list' %}" class="btn btn-secondary px-4 py-2 rounded-3 ms-2">Cancel</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

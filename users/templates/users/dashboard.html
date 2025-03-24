@@ -1,0 +1,21 @@
+{% extends 'crudapp/base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+    <header class="masthead">
+        <div class="container position-relative">
+            <div class="row justify-content-center">
+                <div class="col-xl-6">
+                    <div class="text-center text-white">
+                        <h1 class="mb-5">Welcome to Your Dashboard!</h1>
+                        <a href="{% url 'task_list' %}" class="btn btn-primary">View My Tasks</a>
+                        <a href="{% url 'create_task' %}" class="btn btn-success">Create New Task</a>
+                        <p class="lead">Check out your tasks!</p>
+                        <a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
